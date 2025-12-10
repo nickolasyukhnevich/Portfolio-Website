@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Nickolas Yukhnevich</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="favicon-ny.png" />
+</head>
+<body id="home">
+
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <img src="ny-logo.png" alt="Logo for Nickolas Yukhnevich, UX/UI Designer & Web Developer">
+      </div>
+      <nav class="main-nav">
+        <a href="#home">Home</a>
+        <a href="#work">Case Studies</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main  class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Portfolio Website</p>
+        <h1>Nickolas Yukhnevich</h1>
+
+        <p class="positioning">UX/UI Designer & Web Developer</p>
+
+        <p class="hero-sub">
+          I design intuitive, user-centered digital experiences built on thoughtful UX and clean, responsive web development.
+          My work blends modern interface design with practical problem-solving to create digital products people enjoy using.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn primary">View Case Studies</a>
+          <a href="#contact" class="btn ghost">Contact Me</a>
+        </div>
+      </div>
+
+      <!-- HEADSHOT PLACEHOLDER -->
+      <div class="hero-headshot">
+        <div class="headshot-circle">
+          <img src="THISISS.png" alt="Logo for Nickolas Yukhnevich, UX/UI Designer & Web Developer">
+        </div>
+      </div>
+    </main>
+
+    <!-- CASE STUDIES SECTION -->
+  <section id="work" class="section section-work">
+  <div class="section-header">
+    <h2>Case Studies</h2>
+    <p>Detailed Case Studies Links</p>
+  </div>
+
+  <div class="case-grid">
+
+    <!-- CASE STUDY 1 -->
+    <article class="case-card" data-link="doctor-patient-database.html">
+      <div class="case-thumb">
+        <img src="doctor.webp" alt="Doctor Patient Database Preview">
+      </div>
+      <div class="case-content">
+        <h3>Doctor–Patient Database Website</h3>
+        <p class="case-tag">UX/UI · Web Development</p>
+        <p class="case-desc">
+          A digital platform replacing paper folders and scattered spreadsheets, providing clean, structured patient data access.
+        </p>
+        <div class="case-link">Open Case Study</div>
+      </div>
+    </article>
+
+    <!-- CASE STUDY 2 -->
+    <article class="case-card" data-link="ny-logo-identity.html">
+      <div class="case-thumb">
+        <img src="de.jpg" alt="NY Logo Identity Preview">
+      </div>
+      <div class="case-content">
+        <h3>Personal NY Logo Identity</h3>
+        <p class="case-tag">Branding · Logo</p>
+        <p class="case-desc">
+          A geometric monogram built from “N” and “Y,” designed to scale across interfaces and support a sharp, modern aesthetic. 
+        </p>
+        <div class="case-link">Open Case Study</div>
+      </div>
+    </article>
+
+    <!-- CASE STUDY 3 -->
+    <article class="case-card" data-link="automotive-landing-page.html">
+      <div class="case-thumb">
+        <img src="auto3444.jpg" alt="Automotive Landing Page Preview">
+      </div>
+      <div class="case-content">
+        <h3>Automotive Products Landing Page</h3>
+        <p class="case-tag">UX/UI · Web Interface Design</p>
+        <p class="case-desc">
+          A modern landing page focused on product clarity, visual hierarchy, and ease of comparison across automotive supplies.
+        </p>
+        <div class="case-link">Open Case Study</div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="section section-about">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-bio">
+          <p>
+            I’m a UX/UI designer and web developer who transforms ideas into user-centered digital experiences. 
+            My work focuses on intuitive structure, clean interfaces, and responsive layouts that feel seamless 
+            across devices.
+          </p>
+          <p>
+            I combine modern design principles with efficient, maintainable code to create digital products 
+            that solve real problems—whether through UX strategy, wireframing, prototyping, or full UI development.
+          </p>
+        </div>
+
+        <div class="about-details">
+          <h3>Focus Areas</h3>
+          <ul>
+            <li>UX/UI Design</li>
+            <li>Web Development (HTML, CSS, JS)</li>
+            <li>Wireframing & Prototyping</li>
+            <li>Responsive Interface Design</li>
+          </ul>
+
+          <h3>Tools</h3>
+          <ul>
+            <li>Figma</li>
+            <li>Adobe XD / Illustrator / Photoshop</li>
+            <li>HTML / CSS / JS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-contact">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <p>For collaborations, project inquiries, or opportunities, reach out anytime.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info">
+          <p>Email me directly:</p>
+          <p class="contact-email">nickeyuh@gmail.com</p>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Tell me about your project"></textarea>
+          </div>
+
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nickolas Yukhnevich — Portfolio</p>
+    </footer>
+
+  </div>
+
+<!-- YEAR AUTO-UPDATE -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- CASE CARD CLICK + SELECTION EFFECT -->
+<script>
+  const cards = document.querySelectorAll(".case-card");
+
+  const links = [
+    "doctor-patient-database.html",
+    "ny-logo-identity.html",
+    "automotive-landing-page.html"
+  ];
+
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+
+      // Remove existing selection
+      cards.forEach(c => c.classList.remove("selected"));
+
+      // Select clicked card
+      card.classList.add("selected");
+
+      // Navigate after small delay (lets animation show)
+      setTimeout(() => {
+        window.location.href = links[index];
+      }, 250);
+    });
+  });
+</script>
+
+</body>
+</html>

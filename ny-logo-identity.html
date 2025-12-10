@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NY Personal Logo Identity – Case Study | Nickolas Yukhnevich</title>
+  <link rel="icon" type="image/png" href="favicon-ny.png" />
+
+  <style>
+    /* GLOBAL RESET & BASE STYLES */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-image: url('SX.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* LAYOUT WRAPPER */
+    .site {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+      background: rgb(0, 0, 22);
+    }
+
+    /* HEADER / NAV */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      border: 2px solid #fbbf24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      overflow: hidden;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .main-nav a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fbbf24;
+      transition: width 0.2s ease;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.6rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-header p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid #1f2933;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* PROJECT / CASE STUDY PAGES */
+    .project-hero {
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .project-hero-title {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-tagline {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-summary {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .project-meta {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #1f2933;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .project-meta h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-meta ul {
+      list-style: none;
+    }
+
+    .project-meta li + li {
+      margin-top: 0.25rem;
+    }
+
+    .project-cover {
+      background: #020617;
+      width:350px;
+      border-radius: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #1f2933;
+    }
+
+    .project-cover img {
+      border-radius: 0.75rem;
+    }
+
+    .section-project {
+      margin-bottom: 3rem;
+    }
+
+    .section-project h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-project p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    /* PROGRESS GRID */
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .progress-step {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #1f2933;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .progress-step img {
+      border-radius: 0.75rem;
+    }
+
+    .progress-step h3 {
+      font-size: 0.95rem;
+    }
+
+    .progress-step p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 840px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <img src="ny-logo.png" alt="Logo for Nickolas Yukhnevich, UX/UI Designer & Web Developer">
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#work">Case Studies</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- PROJECT HERO -->
+    <main class="project-hero">
+      <div>
+        <p class="eyebrow">Case Study</p>
+        <h1 class="project-hero-title">NY Personal Logo Identity</h1>
+        <p class="project-tagline">A geometric monogram that fuses “N” and “Y” into a flexible brand mark.</p>
+        <p class="project-summary">
+          This project focuses on building a clean personal logo system for my portfolio and digital presence.
+          The mark needed to be simple enough for a favicon, but strong enough to anchor layouts, thumbnails,
+          and motion graphics.
+        </p>
+      </div>
+
+      <aside class="project-meta">
+        <h3>Project Details</h3>
+        <ul>
+          <li><strong>Role:</strong> Brand Designer</li>
+          <li><strong>Tools:</strong> Illustrator, Photoshop</li>
+          <li><strong>Focus:</strong> Logo system, scalability, visual consistency</li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- FINAL LOGO IMAGE -->
+    <section class="section section-project">
+      <div class="section-header">
+        <h2>Final Logo Lockup</h2>
+        <p>The finished NY monogram in primary color treatment.</p>
+      </div>
+
+      <div class="project-cover">
+        <!-- Replace with your final logo export -->
+        <img src="logo-2.png"
+             alt="Final NY monogram logo combining the letters N and Y in a geometric, modern style.">
+      </div>
+    </section>
+
+    <!-- PROGRESS / PROCESS IMAGES -->
+    <section class="section section-project">
+      <div class="section-header">
+        <h2>Process &amp; Progress</h2>
+        <p>From rough sketch to refined vector system.</p>
+      </div>
+
+      <div class="progress-grid">
+
+        <!-- STEP 1 -->
+        <article class="progress-step">
+          <img src="logo-1-1.png"
+               alt="Rough pencil sketches exploring different N and Y monogram combinations.">
+          <h3>01 — Sketch Exploration</h3>
+          <p>
+            I began with quick pencil sketches exploring how N and Y could overlap, share strokes,
+            or mirror each other while keeping the mark readable.
+          </p>
+        </article>
+
+        <!-- STEP 2 -->
+        <article class="progress-step">
+          <img src="logo-1.png"
+               alt="Vectorized grid-based version of the logo with aligned angles and equal stroke weights.">
+          <h3>02 — Grid &amp; Geometry</h3>
+          <p>
+            I then moved into vector, using a simple grid to align angles and stroke weights.
+            This stage focused on balance and symmetry so the logo feels stable at any size.
+          </p>
+        </article>
+
+        <!-- STEP 3 -->
+        <article class="progress-step">
+          <img src="logo-3.jpg"
+               alt="Logo shown in different sizes and color variations on dark and light backgrounds." width="800px">
+          <h3>03 — Application &amp; Testing</h3>
+          <p>
+           By showcasing the logo on physical merchandise, this mockup reinforces the scalability and commercial readiness of the design. It proves the monogram can support a full brand ecosystem, from UI layouts to clothing, tote bags, packaging, and other promotional materials.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nickolas Yukhnevich — Portfolio</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

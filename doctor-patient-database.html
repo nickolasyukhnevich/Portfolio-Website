@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor–Patient Database Website – Case Study | Nickolas Yukhnevich</title><link rel="icon" type="image/png" href="favicon-ny.png" />
+
+  <style>
+    /* GLOBAL RESET & BASE STYLES */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-image: url('SX.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* LAYOUT WRAPPER */
+    .site {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+      background: rgb(0, 0, 22);
+    }
+
+    /* HEADER / NAV */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      border: 2px solid #fbbf24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      overflow: hidden;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .main-nav a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #fbbf24;
+      transition: width 0.2s ease;
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.6rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-header p {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid #1f2933;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* PROJECT / CASE STUDY PAGES */
+    .project-hero {
+      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .project-hero-title {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-tagline {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-summary {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    .project-meta {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #1f2933;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .project-meta h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-meta ul {
+      list-style: none;
+    }
+
+    .project-meta li + li {
+      margin-top: 0.25rem;
+    }
+
+    .project-cover {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #1f2933;
+    }
+
+    .project-cover img {
+      border-radius: 0.75rem;
+    }
+
+    .section-project {
+      margin-bottom: 3rem;
+    }
+
+    .section-project h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-project p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    /* PROGRESS GRID */
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .progress-step {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1rem;
+      border: 1px solid #1f2933;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .progress-step img {
+      width: 300px;
+      height: 200px;
+      border-radius: 0.75rem;
+    }
+
+    .progress-step h3 {
+      font-size: 0.95rem;
+    }
+
+    .progress-step p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 840px) {
+      .project-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">
+        <img src="ny-logo.png" alt="Logo for Nickolas Yukhnevich, UX/UI Designer & Web Developer">
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#work">Case Studies</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- PROJECT HERO -->
+    <main class="project-hero">
+      <div>
+        <p class="eyebrow">Case Study</p>
+        <h1 class="project-hero-title">Doctor–Patient Database Website</h1>
+        <p class="project-tagline">Transforming fragmented patient records into a single, structured digital experience.</p>
+        <p class="project-summary">
+          This project replaces paper folders and scattered spreadsheets with a web-based patient database.
+          The goal was to reduce cognitive load for the doctor, speed up appointment prep,
+          and make key information easier to find during a consultation.
+        </p>
+      </div>
+
+      <aside class="project-meta">
+        <h3>Project Details</h3>
+        <ul>
+          <li><strong>Role:</strong> UX/UI Designer, Web Developer</li>
+          <li><strong>Tools:</strong> Figma, HTML, CSS, JavaScript</li>
+          <li><strong>Focus:</strong> Information architecture, clean visual hierarchy</li>
+        </ul>
+      </aside>
+    </main>
+
+    <!-- FINAL DESIGN IMAGE -->
+    <section class="section section-project">
+      <div class="section-header">
+        <h2>Final Interface</h2>
+        <p>High-fidelity layout of the main patient dashboard.</p>
+      </div>
+
+      <div class="project-cover">
+        <!-- Replace with your final UI export -->
+        <img src="his.png"
+             alt="Final UI of doctor–patient database showing structured patient records and clean dashboard layout.">
+      </div>
+    </section>
+
+    <!-- PROGRESS / PROCESS IMAGES -->
+    <section class="section section-project">
+      <div class="section-header">
+        <h2>Process &amp; Progress</h2>
+        <p>Three key stages from early structure to refined visual design.</p>
+      </div>
+
+      <div class="progress-grid">
+
+        <!-- STEP 1 -->
+        <article class="progress-step">
+          <img src="wireframe.png"
+               alt="Early wireframe of doctor–patient database with basic layout blocks for navigation and patient list.">
+          <h3>01 — Low-Fidelity Wireframe</h3>
+          <p>
+            I started with a simple wireframe outlining the placement of navigation, the patient list, and individual patient details. My priority at this phase was clarity of structure—testing how information would flow and how users would interact with the system.
+        </article>
+
+        <!-- STEP 2 -->
+        <article class="progress-step">
+          <img src="wireframe2.png" height="100px"
+               alt="Mid-fidelity wireframe showing clearer sections for patient info, filters, and visit history.">
+          <h3>02 — Structure &amp; Grouping</h3>
+          <p>
+            Next, I grouped related fields into clear sections: patient overview, medical history, and visit notes.
+            This reduced scrolling and made it easier for the doctor to scan during an appointment.
+          </p>
+        </article>
+
+        <!-- STEP 3 -->
+        <article class="progress-step">
+          <img src="wireframe3.jpg"
+               alt="High-fidelity screen with refined typography, spacing, and accent colors for key patient data.">
+          <h3>03 — Visual Polish</h3>
+          <p>
+            Finally, I refined typography, spacing, and color accents for key data.
+            The result is a calmer interface where important details stand out without feeling overwhelming.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Nickolas Yukhnevich — Portfolio</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
